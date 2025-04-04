@@ -1,0 +1,527 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_asgi_application",
+        "importPath": "django.core.asgi",
+        "description": "django.core.asgi",
+        "isExtraImport": true,
+        "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "ProcessVcfView",
+        "importPath": "vcf_api.views",
+        "description": "vcf_api.views",
+        "isExtraImport": true,
+        "detail": "vcf_api.views",
+        "documentation": {}
+    },
+    {
+        "label": "CleanVcfView",
+        "importPath": "vcf_api.views",
+        "description": "vcf_api.views",
+        "isExtraImport": true,
+        "detail": "vcf_api.views",
+        "documentation": {}
+    },
+    {
+        "label": "DownloadView",
+        "importPath": "vcf_api.views",
+        "description": "vcf_api.views",
+        "isExtraImport": true,
+        "detail": "vcf_api.views",
+        "documentation": {}
+    },
+    {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "get_wsgi_application",
+        "importPath": "django.core.wsgi",
+        "description": "django.core.wsgi",
+        "isExtraImport": true,
+        "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "FileResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "Http404",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "MultiPartParser",
+        "importPath": "rest_framework.parsers",
+        "description": "rest_framework.parsers",
+        "isExtraImport": true,
+        "detail": "rest_framework.parsers",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "FileWrapper",
+        "importPath": "wsgiref.util",
+        "description": "wsgiref.util",
+        "isExtraImport": true,
+        "detail": "wsgiref.util",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "backend.backend.asgi",
+        "description": "backend.backend.asgi",
+        "peekOfCode": "application = get_asgi_application()",
+        "detail": "backend.backend.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_DIR",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-p%24u8@7)c!$#6852y4vr*sr=%buvwwmoh(s51#+i$vipl=ntw'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-p%24u8@7)c!$#6852y4vr*sr=%buvwwmoh(s51#+i$vipl=ntw'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEBUG",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "INSTALLED_APPS",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'vcf_api',\n    'corsheaders',",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MIDDLEWARE",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'corsheaders.middleware.CorsMiddleware',\n]",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOW_ALL_ORIGINS",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOWED_ORIGINS",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_EXPOSE_HEADERS",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "CORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT_URLCONF",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "ROOT_URLCONF = 'backend.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATES",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "WSGI_APPLICATION",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "WSGI_APPLICATION = 'backend.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASES",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_PASSWORD_VALIDATORS",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "AUTH_PASSWORD_VALIDATORS = [\n    {\n        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',\n    },\n    {\n        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',\n    },",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "TIME_ZONE",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_TZ",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_AUTO_FIELD",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "backend.backend.urls",
+        "description": "backend.backend.urls",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/process-vcf/', ProcessVcfView.as_view(), name='process-vcf'),\n    path('api/clean-vcf/', CleanVcfView.as_view(), name='clean-vcf'),\n    path('api/download/<int:file_id>/', DownloadView.as_view(), name='download-file')\n] \nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "detail": "backend.backend.urls",
+        "documentation": {}
+    },
+    {
+        "label": "application",
+        "kind": 5,
+        "importPath": "backend.backend.wsgi",
+        "description": "backend.backend.wsgi",
+        "peekOfCode": "application = get_wsgi_application()",
+        "detail": "backend.backend.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "backend.vcf_api.migrations.0001_initial",
+        "description": "backend.vcf_api.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='VcfFile',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('original_file', models.FileField(upload_to='vcfs/')),",
+        "detail": "backend.vcf_api.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "VcfApiConfig",
+        "kind": 6,
+        "importPath": "backend.vcf_api.apps",
+        "description": "backend.vcf_api.apps",
+        "peekOfCode": "class VcfApiConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'vcf_api'",
+        "detail": "backend.vcf_api.apps",
+        "documentation": {}
+    },
+    {
+        "label": "VcfFile",
+        "kind": 6,
+        "importPath": "backend.vcf_api.models",
+        "description": "backend.vcf_api.models",
+        "peekOfCode": "class VcfFile(models.Model):\n    original_file = models.FileField(upload_to='vcfs/')\n    cleaned_file = models.FileField(upload_to='cleaned_vcfs/', null=True, blank=True)\n    upload_date = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return self.original_file.name",
+        "detail": "backend.vcf_api.models",
+        "documentation": {}
+    },
+    {
+        "label": "VcfFileSerializer",
+        "kind": 6,
+        "importPath": "backend.vcf_api.serializers",
+        "description": "backend.vcf_api.serializers",
+        "peekOfCode": "class VcfFileSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = VcfFile\n        fields = '__all__'",
+        "detail": "backend.vcf_api.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ProcessVcfView",
+        "kind": 6,
+        "importPath": "backend.vcf_api.views",
+        "description": "backend.vcf_api.views",
+        "peekOfCode": "class ProcessVcfView(APIView):\n    parser_classes = (MultiPartParser,)\n    def post(self, request, format=None):\n        try:\n            uploaded_file = request.FILES['file']\n            vcf_file = VcfFile.objects.create(original_file=uploaded_file)\n            duplicates = self.find_duplicates(vcf_file.original_file.path)\n            return Response({\n                'id': vcf_file.id,\n                'duplicates': duplicates,",
+        "detail": "backend.vcf_api.views",
+        "documentation": {}
+    },
+    {
+        "label": "CleanVcfView",
+        "kind": 6,
+        "importPath": "backend.vcf_api.views",
+        "description": "backend.vcf_api.views",
+        "peekOfCode": "class CleanVcfView(APIView):\n    def post(self, request, format=None):\n        try:\n            file_id = request.data.get('id')\n            duplicates_to_remove = request.data.get('duplicates', [])\n            vcf_file = VcfFile.objects.get(id=file_id)\n            cleaned_path = self.remove_duplicates(\n                vcf_file.original_file.path, \n                duplicates_to_remove\n            )",
+        "detail": "backend.vcf_api.views",
+        "documentation": {}
+    },
+    {
+        "label": "DownloadView",
+        "kind": 6,
+        "importPath": "backend.vcf_api.views",
+        "description": "backend.vcf_api.views",
+        "peekOfCode": "class DownloadView(APIView):\n    def get(self, request, file_id):\n        try:\n            vcf_file = VcfFile.objects.get(id=file_id)\n            if not vcf_file.cleaned_file:\n                return HttpResponse(\"الملف غير موجود\", status=404)\n            file_path = vcf_file.cleaned_file.path\n            if not os.path.exists(file_path):\n                return HttpResponse(\"الملف غير موجود على الخادم\", status=404)\n            # الطريقة الأمثل للتنزيل",
+        "detail": "backend.vcf_api.views",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "backend.manage",
+        "description": "backend.manage",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "detail": "backend.manage",
+        "documentation": {}
+    }
+]
