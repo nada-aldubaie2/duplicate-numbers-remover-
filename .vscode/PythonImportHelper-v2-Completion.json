@@ -25,6 +25,14 @@
         "documentation": {}
     },
     {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -179,7 +187,7 @@
         "documentation": {}
     },
     {
-        "label": "Http404",
+        "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -241,7 +249,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-p%24u8@7)c!$#6852y4vr*sr=%buvwwmoh(s51#+i$vipl=ntw'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\nload_dotenv()\nSECRET_KEY = str(os.getenv('SECRET_KEY'))\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1'] \n# Application definition\nINSTALLED_APPS = [",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -250,7 +258,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-p%24u8@7)c!$#6852y4vr*sr=%buvwwmoh(s51#+i$vipl=ntw'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = str(os.getenv('SECRET_KEY'))\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1'] \n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -259,7 +267,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1'] \n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -268,7 +276,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
+        "peekOfCode": "ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1'] \n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -286,7 +294,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'corsheaders.middleware.CorsMiddleware',\n]",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n    'corsheaders.middleware.CorsMiddleware', \n    'django.middleware.common.CommonMiddleware',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -295,7 +303,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',",
+        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = False\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nLANGUAGE_CODE = 'ar'\nUSE_I18N = True\nUSE_L10N = True",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -304,7 +312,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nLANGUAGE_CODE = 'ar'\nUSE_I18N = True\nUSE_L10N = True\nDEFAULT_CHARSET = 'utf-8'",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -313,7 +321,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "CORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',",
+        "peekOfCode": "CORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nLANGUAGE_CODE = 'ar'\nUSE_I18N = True\nUSE_L10N = True\nDEFAULT_CHARSET = 'utf-8'\nFILE_CHARSET = 'utf-8'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -322,7 +330,52 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "ROOT_URLCONF = 'backend.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "peekOfCode": "ROOT_URLCONF = 'backend.urls'\nLANGUAGE_CODE = 'ar'\nUSE_I18N = True\nUSE_L10N = True\nDEFAULT_CHARSET = 'utf-8'\nFILE_CHARSET = 'utf-8'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LANGUAGE_CODE",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "LANGUAGE_CODE = 'ar'\nUSE_I18N = True\nUSE_L10N = True\nDEFAULT_CHARSET = 'utf-8'\nFILE_CHARSET = 'utf-8'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_I18N",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nDEFAULT_CHARSET = 'utf-8'\nFILE_CHARSET = 'utf-8'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "USE_L10N",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "USE_L10N = True\nDEFAULT_CHARSET = 'utf-8'\nFILE_CHARSET = 'utf-8'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_CHARSET",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "DEFAULT_CHARSET = 'utf-8'\nFILE_CHARSET = 'utf-8'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "FILE_CHARSET",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "FILE_CHARSET = 'utf-8'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -394,7 +447,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Securing media files",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -403,7 +456,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Securing media files\nX_FRAME_OPTIONS = 'DENY'\nSECURE_CONTENT_TYPE_NOSNIFF = True",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -412,7 +465,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Securing media files\nX_FRAME_OPTIONS = 'DENY'\nSECURE_CONTENT_TYPE_NOSNIFF = True",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -421,7 +474,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Securing media files\nX_FRAME_OPTIONS = 'DENY'\nSECURE_CONTENT_TYPE_NOSNIFF = True",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -430,7 +483,25 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\n# Securing media files\nX_FRAME_OPTIONS = 'DENY'\nSECURE_CONTENT_TYPE_NOSNIFF = True",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "X_FRAME_OPTIONS",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "X_FRAME_OPTIONS = 'DENY'\nSECURE_CONTENT_TYPE_NOSNIFF = True",
+        "detail": "backend.backend.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECURE_CONTENT_TYPE_NOSNIFF",
+        "kind": 5,
+        "importPath": "backend.backend.settings",
+        "description": "backend.backend.settings",
+        "peekOfCode": "SECURE_CONTENT_TYPE_NOSNIFF = True",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -493,7 +564,7 @@
         "kind": 6,
         "importPath": "backend.vcf_api.views",
         "description": "backend.vcf_api.views",
-        "peekOfCode": "class ProcessVcfView(APIView):\n    parser_classes = (MultiPartParser,)\n    def post(self, request, format=None):\n        try:\n            uploaded_file = request.FILES['file']\n            vcf_file = VcfFile.objects.create(original_file=uploaded_file)\n            duplicates = self.find_duplicates(vcf_file.original_file.path)\n            return Response({\n                'id': vcf_file.id,\n                'duplicates': duplicates,",
+        "peekOfCode": "class ProcessVcfView(APIView):\n    parser_classes = (MultiPartParser,)\n    def post(self, request, format=None):\n        try:\n            uploaded_file = request.FILES['file']\n            vcf_file = VcfFile.objects.create(original_file=uploaded_file)\n            result = self.find_duplicates(vcf_file.original_file.path)\n            return Response({\n                'id': vcf_file.id,\n                'total_numbers': result['total_numbers'],",
         "detail": "backend.vcf_api.views",
         "documentation": {}
     },
@@ -502,7 +573,7 @@
         "kind": 6,
         "importPath": "backend.vcf_api.views",
         "description": "backend.vcf_api.views",
-        "peekOfCode": "class CleanVcfView(APIView):\n    def post(self, request, format=None):\n        try:\n            file_id = request.data.get('id')\n            duplicates_to_remove = request.data.get('duplicates', [])\n            vcf_file = VcfFile.objects.get(id=file_id)\n            cleaned_path = self.remove_duplicates(\n                vcf_file.original_file.path, \n                duplicates_to_remove\n            )",
+        "peekOfCode": "class CleanVcfView(APIView):\n    def post(self, request, format=None):\n        try:\n            file_id = request.data.get('id')\n            duplicates_to_remove = request.data.get('duplicates', [])\n            vcf_file = VcfFile.objects.get(id=file_id)\n            result = self.remove_duplicates(\n                vcf_file.original_file.path, \n                duplicates_to_remove\n            )",
         "detail": "backend.vcf_api.views",
         "documentation": {}
     },
@@ -511,7 +582,7 @@
         "kind": 6,
         "importPath": "backend.vcf_api.views",
         "description": "backend.vcf_api.views",
-        "peekOfCode": "class DownloadView(APIView):\n    def get(self, request, file_id):\n        try:\n            vcf_file = VcfFile.objects.get(id=file_id)\n            if not vcf_file.cleaned_file:\n                return HttpResponse(\"الملف غير موجود\", status=404)\n            file_path = vcf_file.cleaned_file.path\n            if not os.path.exists(file_path):\n                return HttpResponse(\"الملف غير موجود على الخادم\", status=404)\n            # الطريقة الأمثل للتنزيل",
+        "peekOfCode": "class DownloadView(APIView):\n    def get(self, request, file_id):\n        try:\n            vcf_file = VcfFile.objects.get(id=file_id)\n            if not vcf_file.cleaned_file:\n                return HttpResponse(\"الملف غير موجود\", status=404)\n            file_path = vcf_file.cleaned_file.path\n            if not os.path.exists(file_path):\n                return HttpResponse(\"الملف غير موجود على الخادم\", status=404)\n            response = FileResponse(open(file_path, 'rb'))",
         "detail": "backend.vcf_api.views",
         "documentation": {}
     },

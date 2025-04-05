@@ -1,7 +1,7 @@
 import re
 import tempfile
 import os
-from django.http import JsonResponse, FileResponse, Http404
+from django.http import JsonResponse, FileResponse, HttpResponse
 from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
@@ -17,11 +17,13 @@ class ProcessVcfView(APIView):
         try:
             uploaded_file = request.FILES['file']
             vcf_file = VcfFile.objects.create(original_file=uploaded_file)
-            duplicates = self.find_duplicates(vcf_file.original_file.path)
+            result = self.find_duplicates(vcf_file.original_file.path)
             
             return Response({
                 'id': vcf_file.id,
-                'duplicates': duplicates,
+                'total_numbers': result['total_numbers'],
+                'unique_numbers': result['unique_numbers'],
+                'duplicates': result['duplicates'],
                 'original_file': vcf_file.original_file.url
             })
         except Exception as e:
@@ -30,20 +32,19 @@ class ProcessVcfView(APIView):
     def find_duplicates(self, file_path):
         phone_numbers = {}
         duplicates = []
-        tel_pattern = re.compile(r'TEL[^:]*:([^\r\n]+)', re.IGNORECASE)
+        total_numbers = 0
         
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-            
-        # تقسيم المحتوى إلى بطاقات فردية
+        
         vcards = content.split('BEGIN:VCARD')
         for vcard in vcards:
             if not vcard.strip():
                 continue
                 
-            # البحث عن أرقام الهاتف في البطاقة
-            matches = tel_pattern.findall(vcard)
+            matches = re.findall(r'TEL[^:]*:([^\r\n]+)', vcard, re.IGNORECASE)
             for num in matches:
+                total_numbers += 1
                 num = num.strip()
                 if num in phone_numbers:
                     duplicates.append(num)
@@ -51,7 +52,12 @@ class ProcessVcfView(APIView):
                 else:
                     phone_numbers[num] = 1
         
-        return list(set(duplicates))
+        return {
+            'total_numbers': total_numbers,
+            'duplicates': list(set(duplicates)),
+            'unique_numbers': len(phone_numbers)
+        }
+
 
 class CleanVcfView(APIView):
     def post(self, request, format=None):
@@ -60,49 +66,69 @@ class CleanVcfView(APIView):
             duplicates_to_remove = request.data.get('duplicates', [])
             vcf_file = VcfFile.objects.get(id=file_id)
             
-            cleaned_path = self.remove_duplicates(
+            result = self.remove_duplicates(
                 vcf_file.original_file.path, 
                 duplicates_to_remove
             )
             
-            with open(cleaned_path, 'rb') as f:
+            with open(result['file_path'], 'rb') as f:
                 vcf_file.cleaned_file.save(
-                    os.path.basename(cleaned_path), 
+                    os.path.basename(result['file_path']), 
                     f
                 )
+            
             return Response({
-                'cleaned_file': vcf_file.cleaned_file.url
+                'cleaned_file': vcf_file.cleaned_file.url,
+                'stats': {
+                    'total_before': result['total_before'],
+                    'total_after': result['total_after'],
+                    'removed_count': result['total_before'] - result['total_after']
+                }
             })
         except Exception as e:
             return Response({'error': str(e)}, status=500)
 
     def remove_duplicates(self, file_path, duplicates_to_remove):
         temp_file = tempfile.NamedTemporaryFile(delete=False, suffix='.vcf', mode='w', encoding='utf-8')
-        tel_pattern = re.compile(r'(TEL[^:]*:)([^\r\n]+)', re.IGNORECASE)
         duplicates_set = set(duplicates_to_remove)
+        total_before = 0
+        total_after = 0
         
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # معالجة كل بطاقة على حدة
         vcards = content.split('BEGIN:VCARD')
         for vcard in vcards:
             if not vcard.strip():
                 continue
                 
-            # تصفية أرقام الهاتف المكررة
-            modified_vcard = tel_pattern.sub(
-                lambda m: m.group(0) if m.group(2).strip() not in duplicates_set else '',
-                vcard
-            )
+            lines = vcard.split('\n')
+            new_lines = []
+            skip_card = False
             
-            # كتابة البطاقة المعدلة إذا كانت تحتوي على أرقام
-            if 'TEL' in modified_vcard:
-                temp_file.write('BEGIN:VCARD' + modified_vcard)
+            for line in lines:
+                if line.startswith('TEL;') or line.startswith('TEL:'):
+                    total_before += 1
+                    tel = line.split(':')[1].strip()
+                    if tel in duplicates_set:
+                        skip_card = True
+                    else:
+                        new_lines.append(line)
+                        total_after += 1
+                else:
+                    new_lines.append(line)
+            
+            if not skip_card:
+                temp_file.write('BEGIN:VCARD\n' + '\n'.join(new_lines))
         
         temp_file.close()
-        return temp_file.name
-    
+        
+        return {
+            'file_path': temp_file.name,
+            'total_before': total_before,
+            'total_after': total_after
+        }
+
 
 class DownloadView(APIView):
     def get(self, request, file_id):
@@ -117,9 +143,8 @@ class DownloadView(APIView):
             if not os.path.exists(file_path):
                 return HttpResponse("الملف غير موجود على الخادم", status=404)
             
-            # الطريقة الأمثل للتنزيل
             response = FileResponse(open(file_path, 'rb'))
-            response['Content-Type'] = 'text/vcard'
+            response['Content-Type'] = 'text/vcard; charset=utf-8'
             response['Content-Disposition'] = f'attachment; filename="{os.path.basename(file_path)}"'
             return response
             

@@ -1,5 +1,4 @@
 from django.db import models
-
 class VcfFile(models.Model):
     original_file = models.FileField(upload_to='vcfs/')
     cleaned_file = models.FileField(upload_to='cleaned_vcfs/', null=True, blank=True)

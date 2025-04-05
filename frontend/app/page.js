@@ -2,7 +2,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useDropzone } from "react-dropzone";
-import Link from "next/link";
+import Footer from "../app/components/footer";
+import Btn from "../app/components/btn";
 
 export default function Home() {
   const [file, setFile] = useState(null);
@@ -13,6 +14,11 @@ export default function Home() {
   const [cleanedFileUrl, setCleanedFileUrl] = useState(null);
   const [originalFileUrl, setOriginalFileUrl] = useState(null);
   const [noDuplicatesMessage, setNoDuplicatesMessage] = useState("");
+  const [stats, setStats] = useState({
+    totalBefore: 0,
+    totalAfter: 0,
+    duplicatesCount: 0,
+  });
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: ".vcf",
@@ -41,14 +47,18 @@ export default function Home() {
           },
         }
       );
-
       setFileId(response.data.id);
       setDuplicates(response.data.duplicates);
       setOriginalFileUrl(response.data.original_file);
       setSelectedDuplicates(response.data.duplicates);
-
+      setStats({
+        ...stats,
+        totalBefore: response.data.total_numbers,
+        duplicatesCount: response.data.duplicates.length,
+      });
+      
       if (response.data.duplicates.length === 0)
-        setNoDuplicatesMessage("لا توجد لديك أرقام مكررة 🌝");
+        setNoDuplicatesMessage("لا توجد لديك أرقام مكررة 🌝✔️");
     } catch (error) {
       console.error("Error processing file:", error);
     } finally {
@@ -71,6 +81,11 @@ export default function Home() {
       );
 
       setCleanedFileUrl(response.data.cleaned_file);
+      setStats({
+        ...stats,
+        totalAfter: response.data.stats.total_after
+      });
+
     } catch (error) {
       console.error("Error cleaning file:", error);
     } finally {
@@ -126,15 +141,11 @@ export default function Home() {
           </div>
 
           {file && (
-            <button
+            <Btn
+              title={processing ? "جاري المعالجة..." : "معالجة الملف"}
               onClick={processFile}
               disabled={processing}
-              className={`px-6 py-2 rounded-lg ${
-                processing ? "bg-cyan-300" : "bg-cyan-600"
-              } text-white font-medium hover:bg-cyan-700 transition disabled:bg-gray-300 disabled:cursor-not-allowed`}
-            >
-              {processing ? "جاري المعالجة..." : "معالجة الملف"}
-            </button>
+            />
           )}
 
           {noDuplicatesMessage && (
@@ -145,7 +156,8 @@ export default function Home() {
 
           {duplicates.length > 0 && (
             <div className="mt-8 text-right" dir="rtl">
-              <h2 className="text-xl  text-cyan-500">
+              <h6 className="text-gray-400">عدد الأرقام قبل التنظيف: <span className="font-bold">{stats.totalBefore}</span></h6>
+              <h2 className="text-xl  text-cyan-500 mt-3">
                 الأرقام المكررة ({duplicates.length})
               </h2>
 
@@ -170,64 +182,36 @@ export default function Home() {
                 ))}
               </ul>
               <div className="my-4 space-x-3">
-                <button
-                  onClick={selectAllDuplicates}
-                  className="px-4 py-1 bg-cyan-600 text-white rounded hover:bg-cyan-700 transition"
-                >
-                  تحديد الكل
-                </button>
-                <button
-                  onClick={deselectAllDuplicates}
-                  className="px-4 py-1 bg-cyan-600 text-white rounded hover:bg-cyan-700 transition"
-                >
-                  إلغاء التحديد
-                </button>
+                <Btn title="تحديد الكل" onClick={selectAllDuplicates} />
+                <Btn title="إلغاء التحديد" onClick={deselectAllDuplicates} />
               </div>
-              <button
+              <Btn
+                title={processing ? "جاري التنظيف..." : "حذف المحدد"}
                 onClick={cleanFile}
                 disabled={processing || selectedDuplicates.length === 0}
-                className={`mt-4 px-6 py-2 rounded-lg ${
-                  processing ? "bg-cyan-300" : "bg-cyan-600"
-                } text-white font-medium hover:bg-cyan-700 transition disabled:bg-gray-300 disabled:cursor-not-allowed`}
-              >
-                {processing ? "جاري التنظيف..." : "حذف المحدد"}
-              </button>
-            </div>
+              />
+              </div>
           )}
 
-          {cleanedFileUrl && duplicates.length > 0 &&  (
-            <div className="mt-8 p-4 border-2 border-dashed border-gray-500 rounded-lg">
-              <h2 className="text-xl font-semibold text-cyan-00 mb-3">
-                تم تنظيف الملف بنجاح
-              </h2>
-              <button
-                onClick={downloadFile}
-                className="px-6 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition"
-              >
-                تنزيل الملف النظيف
-              </button>
-            </div>
+
+          {cleanedFileUrl && duplicates.length > 0 && (
+            
+       <>
+             <div className="my-6 text-center">
+             <h6 className="text-gray-300">عدد الأرقام بعد التنظيف: <span className="font-bold text-cyan-400">{stats.totalAfter}</span></h6>
+             <h6 className="text-gray-300">عدد الأرقام المحذوفة: <span className="font-bold">{stats.totalBefore - stats.totalAfter}</span></h6>
+              </div>
+               <div className="mt-8 p-4 border-2 border-dashed border-gray-500 rounded-lg">
+                 <h2 className="text-xl font-semibold text-cyan-00 mb-3">
+                   تم تنظيف الملف بنجاح
+                 </h2>
+                 <Btn title=" تنزيل الملف النظيف" onClick={downloadFile} />
+               </div>
+       </>
           )}
         </main>
       </div>
-      <footer className=" text-gray-500 py-4 text-center">
-        <div className="container mx-auto text-base">
-          <p className="mb-2">
-            Developed by &nbsp;
-            <Link
-              href="https://www.linkedin.com/in/nada-aldubaie%F0%9F%AA%84-3a3a96238?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold text-cyan-600 hover:text-cyan-400 transition-colors"
-            >
-              Nada Aldubaie
-            </Link>
-          </p>
-          <p className="text-sm">
-            © {new Date().getFullYear()}  All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
