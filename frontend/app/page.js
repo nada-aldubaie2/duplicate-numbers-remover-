@@ -51,11 +51,7 @@ export default function Home() {
       setDuplicates(response.data.duplicates);
       setOriginalFileUrl(response.data.original_file);
       setSelectedDuplicates(response.data.duplicates);
-      setStats({
-        ...stats,
-        totalBefore: response.data.total_numbers,
-        duplicatesCount: response.data.duplicates.length,
-      });
+        
       
       if (response.data.duplicates.length === 0)
         setNoDuplicatesMessage("لا توجد لديك أرقام مكررة 🌝✔️");
