@@ -9,7 +9,7 @@
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "https://your-django-app.onrender.com/api/$1",
+        "dest": "https://backend-duplicate-numbers-remover.onrender.com/",
         "methods": ["GET", "POST", "PUT", "DELETE"]
       }
     ]

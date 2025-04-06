@@ -303,7 +303,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = False\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n    \"https://vcf-cleaner.vercel.app/\"\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nLANGUAGE_CODE = 'ar'\nUSE_I18N = True",
+        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = False\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n    \"https://vcf-cleaner.vercel.app\"\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nLANGUAGE_CODE = 'ar'\nUSE_I18N = True",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
@@ -312,7 +312,7 @@
         "kind": 5,
         "importPath": "backend.backend.settings",
         "description": "backend.backend.settings",
-        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n    \"https://vcf-cleaner.vercel.app/\"\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nLANGUAGE_CODE = 'ar'\nUSE_I18N = True\nUSE_L10N = True",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:3000\",\n    \"http://127.0.0.1:3000\",\n    \"https://vcf-cleaner.vercel.app\"\n]\nCORS_EXPOSE_HEADERS = ['Content-Disposition']\nROOT_URLCONF = 'backend.urls'\nLANGUAGE_CODE = 'ar'\nUSE_I18N = True\nUSE_L10N = True",
         "detail": "backend.backend.settings",
         "documentation": {}
     },
