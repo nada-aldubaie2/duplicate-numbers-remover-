@@ -39,7 +39,7 @@ export default function Home() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/process-vcf/",
+        "https://backend-duplicate-numbers-remover.onrender.com/api/process-vcf/",
         formData,
         {
           headers: {
@@ -69,7 +69,7 @@ export default function Home() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/clean-vcf/",
+        "https://backend-duplicate-numbers-remover.onrender.com/api/clean-vcf/",
         {
           id: fileId,
           duplicates: selectedDuplicates,
@@ -107,7 +107,7 @@ export default function Home() {
 
   const downloadFile = async () => {
     try {
-      window.location.href = `http://localhost:8000/api/download/${fileId}/`;
+      window.location.href = `https://backend-duplicate-numbers-remover.onrender.com/api/download/${fileId}/`;
     } catch (error) {
       console.error("Download error:", error);
       alert("حدث خطأ أثناء التنزيل. يرجى المحاولة مرة أخرى.");
