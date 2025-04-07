@@ -32,7 +32,7 @@ A tool to detect and remove duplicate phone numbers from VCF (vCard) contact fil
 - Python 3.12.4
 - Node.js v22.14.0
 - npm 11.2.0
-- Sqlite3 (recommended to use PostgreSQL)
+- PostgreSQL
 
 ### Installation
 
