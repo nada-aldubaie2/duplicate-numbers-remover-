@@ -2,8 +2,8 @@
 
 A tool to detect and remove duplicate phone numbers from VCF (vCard) contact files while preserving all other contact information.
 
+## <a href='https://vcf-cleaner.vercel.app/'>🔗 Tool trial link</a>
 ![vcf](https://github.com/user-attachments/assets/2b010844-aa88-46d6-a808-f45876255119)
-
 
 ## ✨ Features
 
