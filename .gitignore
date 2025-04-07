@@ -1,1 +1,11 @@
 ".env" 
+venv
+
+.env
+.env.local
+.env.development
+.env.test
+
+# تجاهل ملفات النظام العامة
+.DS_Store
+Thumbs.db

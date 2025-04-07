@@ -1,0 +1,20 @@
+*.pyc
+*.pyo
+__pycache__/
+env/
+venv/
+*.db
+*.sqlite3
+
+# ملفات Django
+media/
+
+# ملفات السجلات
+*.log
+
+# ملفات البيئة الخاصة بـ Django
+*.env
+
+# تجاهل نسخ احتياطية لقاعدة البيانات PostgreSQL (إذا قمت بتخزينها محليًا)
+*.sql
+*.dump
