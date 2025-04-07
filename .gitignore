@@ -6,6 +6,5 @@ venv
 .env.development
 .env.test
 
-# تجاهل ملفات النظام العامة
 .DS_Store
 Thumbs.db
